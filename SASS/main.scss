@@ -1,0 +1,112 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    user-select: none;
+}
+
+@import 'mixin';
+
+.welcome{
+    
+    @include colorShade();
+    @include bodyBackground();
+    
+    h1{
+        position: relative;
+        top :90px;
+        width:980px;
+        left: 10px;
+        font-size: 40px;
+        color: white;
+        word-spacing: 15px;
+        letter-spacing: 3px;
+        text-shadow: 2px 2px 4px gray;
+        transition: animation 3s;
+        animation: move 10s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+    }
+    
+    #option{
+        position: absolute;
+        left :25%;
+        top : 200px;
+        width:50%;
+        height: 370px;
+        border-radius: 50px;
+        padding-top: 20px;
+        background-image: linear-gradient(to left, plum,rgb(187, 81, 187));
+        color:black;
+        text-align: center;
+        box-shadow: 4px 4px 4px gray;
+        h2{
+            font-size: 26px;
+            word-spacing: 4px;
+            text-transform: uppercase;
+            
+        }
+        #radio{
+            width:300px;
+            padding: 0px;
+            text-align: start;
+            position: relative;
+            left : 270px;
+            top : 15px;
+            .space{
+                margin-top : 15px;
+            }
+            label{
+                font-size: 23px;
+            }
+        }
+        #btn{
+            @include colorShade();
+            position: relative;
+            top :50px;
+            width :200px;
+            height : 45px;
+            border-radius: 20px;
+            font-size: 20px;
+            border: none;
+            font-weight: bold;
+            transition-property: transform;
+            transition-timing-function: linear;
+            transition-duration: 1s;
+            outline: none;
+            color: white;
+            &:hover{ cursor: pointer; transform: scale(1.1,1.1);
+                background-image: linear-gradient(to left,rgb(4, 4, 83), rgb(77, 9, 77));}
+        }
+    }
+    
+}
+
+.sFrame{
+    @include bodyBackground();
+    @include colorShade();
+    #frame{
+        @include scpos(90px,60px,450px,650px,start,start, 20px);
+        #question{
+            position: absolute;
+            top : 20px;
+            left : 20px;
+            font-size: 25px;
+        }
+        #sopt{
+            @include options();
+        }
+        button{
+            @include colorShade();
+            @include button();
+            &:hover{cursor: pointer; background-image: linear-gradient(to left,rgb(4, 4, 83), rgb(77, 9, 77));}
+        }
+    }
+    #time{
+        @include scpos(90px, 980px, 100px, 300px, center , center,38px);
+    }
+    #score{
+        @include scpos(285px, 980px , 250px, 300px, center , center, 30px);
+    }
+
+}
